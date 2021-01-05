@@ -43,9 +43,14 @@ for i in range(len(timeslot_arr)):
     slot_dict[time1[0].split('\n')[1]] = ind_dict
 
 
-
+avail = []
 for key, value in slot_dict.items():
     for slot in value.values():
         if slot == "Avail":
-            print("Slot available at time: ", key)
+            avail.append(key)
+
+avail = set(avail)
+print("Gym slots are available for the following time slots today: ")
+for i in avail:
+    print(i)
 
